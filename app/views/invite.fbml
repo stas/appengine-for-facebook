@@ -1,0 +1,29 @@
+<fb:if-user-has-added-app>
+        <fb:dashboard>
+            <fb:create-button href="{{ app_url }}invite">INVITE FRIENDS</fb:create-button>
+        </fb:dashboard>
+    <fb:else>
+        <fb:dashboard>
+            <fb:create-button href="http://apps.facebook.com/add.php?api_key={{ app_key }}">ADD SIMPLE FB APP</fb:action>
+        </fb:dashboard>
+    </fb:else>
+</fb:if-user-has-added-app>
+<fb:tabs>
+  <fb:tab-item href="{{ app_url }}" title="Start"/>
+  <fb:tab-item href="{{ app_url }}invite" title="Invite Friends" selected="true"/>
+</fb:tabs>
+
+<div class="content invite">
+        <fb:request-form action="{{app_url}}invite?invited=1"
+                method="post" invite="true" type="SIMPLE FB APP"
+                content='
+                        Ahoy <fb:name uid="{{ e.uid }}" firstnameonly="true" useyou="false" />,
+                        <fb:name uid="{{uid}}" firstnameonly="true" useyou="false" /> invites you 
+                        to use <fb:req-choice url="{{ app_url }}" label="SIMPLE FB APP" />.
+                        Cheers...
+                '>
+                <fb:multi-friend-selector max="30"
+                        actiontext="Here're all your friends! Go on send some invites..."
+                        showborder="false" rows="5" />
+        </fb:request-form>
+</div>

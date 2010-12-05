@@ -1,0 +1,23 @@
+<fb:if-user-has-added-app>
+        <fb:dashboard>
+            <fb:create-button href="{{ app_url }}invite">INVITE FRIENDS</fb:create-button>
+        </fb:dashboard>
+    <fb:else>
+        <fb:dashboard>
+            <fb:create-button href="http://apps.facebook.com/add.php?api_key={{ app_key }}">ADD SIMPLE FB APP</fb:action>
+        </fb:dashboard>
+    </fb:else>
+</fb:if-user-has-added-app>
+<fb:tabs>
+  <fb:tab-item href="{{ app_url }}" title="Start" selected="true"/>
+  <fb:tab-item href="{{ app_url }}invite" title="Invite Friends"/>
+</fb:tabs>
+
+<div class="content home">
+    <div class="add-prof-tab">
+        <fb:add-profile-tab></fb:add-profile-tab>
+    </div>
+    <div class="bookmark">
+        <fb:bookmark></fb:bookmark>
+    </div>
+</div>
