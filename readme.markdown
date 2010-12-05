@@ -8,10 +8,8 @@ This repo is intended to help beginners write facebook apps and learn how to use
 
 ## How to deploy
 
-```
-git clone git://github.com/stas/appengine-for-facebook.git
-cd appengine-for-facebook
-```
+`git clone git://github.com/stas/appengine-for-facebook.git`
+`cd appengine-for-facebook`
 
 Now modify `app-sample.yaml` and `facebook-sample.yaml`
 Once you're done, rename the files into `app.yaml` and `facebook.yaml`
